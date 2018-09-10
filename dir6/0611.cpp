@@ -11,42 +11,42 @@ unsigned int rollDice(); //rolls dice, calculates and displays sum
 int main()
 {
 	// enumeration with contants that represent the game status
-	enum Status {CONTINUE, WON, LOST}; //all caps in constants
+	enum class Status {CONTINUE, WON, LOST}; //all caps in constants
 
 	//randomize random number generator using current time
 	srand( static_cast<unsigned int>( time( 0 ) ) );
 
 	unsigned int myPoint = 0; //point if no win or loss on first roll
-	Status gameStatus = CONTINUE; // can contain CONTINUE, WON or LOST
+	Status gameStatus = Status::CONTINUE; // can contain CONTINUE, WON or LOST
 	unsigned int sumOfDice = rollDice(); //first roll of the dice
 	switch( sumOfDice )
 	{
 		case 7:	//win with 7 on first roll
 		case 11: //win with 11 on first roll
-			gameStatus = WON;
+			gameStatus = Status::WON;
 			break;
 		case 2: //lose with 2 on first roll
 		case 3: //lose with 3 on first roll
 		case 12: //lose with 12 on first roll
-			gameStatus = LOST;
+			gameStatus = Status::LOST;
 			break;
 		default:
-			gameStatus = CONTINUE;
+			gameStatus = Status::CONTINUE;
 			myPoint = sumOfDice;
 			cout << "Point is " << myPoint << endl;
 			break;
 	} // end switch
 
-	while( CONTINUE == gameStatus )
+	while( Status::CONTINUE == gameStatus )
 	{
 		sumOfDice = rollDice();
 		if( sumOfDice == myPoint )
-			gameStatus = WON;
+			gameStatus = Status::WON;
 		else if( sumOfDice == 7 )
-			gameStatus = LOST;
+			gameStatus = Status::LOST;
 	}
 
-	if( WON == gameStatus )
+	if( Status::WON == gameStatus )
 		cout << "Player wins" << endl;
 	else
 		cout << "Player loses" << endl;
