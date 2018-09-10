@@ -11,7 +11,7 @@ unsigned int rollDice(); //rolls dice, calculates and displays sum
 int main()
 {
 	// enumeration with contants that represent the game status
-	enum class Status {CONTINUE, WON, LOST}; //all caps in constants
+	enum class Status:unsigned int {CONTINUE, WON, LOST}; //all caps in constants
 
 	//randomize random number generator using current time
 	srand( static_cast<unsigned int>( time( 0 ) ) );
