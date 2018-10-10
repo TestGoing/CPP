@@ -16,6 +16,6 @@ int main()
 	{
 		cout.width( widthValue++ );
 		cout << sentence << endl;
-		cin.width(5); //input 5 more characters from sentence
+		cin.width( 5 ); //input 5 more characters from sentence
 	}
 }
