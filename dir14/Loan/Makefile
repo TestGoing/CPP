@@ -1,7 +1,9 @@
 cc=g++
-prom=TestClientData
+#prom=TestClientDataWrite
+prom=TestClientDataRead
 deps=$(shell find ./ -name "*.h")
-src=$(shell find ./ -name "*.cpp")
+#src=$(shell find ./ -name "*.cpp")
+src = ClientData.cpp TestClientRead.cpp
 obj=$(src:%.cpp=%.o)
 
 $(prom):$(obj)
