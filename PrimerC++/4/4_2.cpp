@@ -22,6 +22,6 @@ int main()
 	cout << "*(vec.begin())的值是: " << *(vec.begin()) << endl;
 	cout << "*vec.begin()+1的值是: " << *vec.begin() + 1 << endl;
 	cout << "*(*(vec.begn()))+1的值是: " << (*(vec.begin())) + 1 << endl;
-
+	
 	return 0;
 }
